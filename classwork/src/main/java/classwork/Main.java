@@ -7,7 +7,7 @@ public class Main {
 
     public static void testCourseClass() {
         Course dataStructures = new Course("Date Structres", Course.Department.CNSE, Course.College.B, 306);
-        System.out.println("Data Structures' Data: ");
+        System.out.println("Data Structures' Data (?): ");
         System.out.println("\t" + dataStructures.getName());
         System.out.println("\t" + dataStructures.getDepartment());
         System.out.println("\t" + dataStructures.getCollege());
