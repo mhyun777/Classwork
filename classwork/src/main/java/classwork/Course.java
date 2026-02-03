@@ -48,38 +48,10 @@ public class Course {
      * @return The course code
      */
     public String code() {
-        String output = "";
-        switch (department) {
-            case CMSC: {
-                output += "CMSC ";
-                break;
-            }
-            case CNSE: {
-                output += "CNSE ";
-                break;
-            }
-            default: {
-                output += "???? ";
-                break;
-            }
-        }
-        switch (college) {
-            case H: {
-                output += "H";
-                break;
-            }
-            case B: {
-                output += "B";
-                break;
-            }
-            case S: {
-                output += "S";
-                break;
-            }
-        }
-        return output + Integer.toString(number);
+        return department.toString() + " " + college.toString() + Integer.toString(number);
     }
 
+    @Override
     public String toString() {
         return code() + " " + name;
     }
