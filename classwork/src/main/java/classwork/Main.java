@@ -5,6 +5,8 @@ public class Main {
         testCourseClass();
         System.out.println();
         testCSCourseClass();
+        System.out.println();
+        testArrays();
     }
 
     public static void testCourseClass() {
@@ -33,5 +35,32 @@ public class Main {
         CSCourse.Language[] languages = {CSCourse.Language.PYTHON, CSCourse.Language.C, CSCourse.Language.JAVA};
         CSCourse anotherCourse = new CSCourse("All the CS!!!", Course.College.B, 499, languages);
         System.out.println(anotherCourse);
+    }
+
+    public static void testArrays() {
+        String[] myStrings = new String[5];
+        myStrings[0] = "this";
+        myStrings[1] = "is";
+        myStrings[2] = "an";
+        myStrings[3] = "array";
+        myStrings[4] = "ofstrings";
+
+        String[] moreStrings = new String[6];
+        for(int i = 0; i < myStrings.length; i++) {
+            moreStrings[i] = myStrings[i];
+        }
+        moreStrings[4] = "of";
+        moreStrings[5] = "strings";
+
+        printArray(myStrings);
+        System.out.println();
+        printArray(moreStrings);
+    }
+
+    public static void printArray(String[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+            
+        }
     }
 }
