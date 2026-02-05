@@ -1,12 +1,18 @@
 package classwork;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        testCourseClass();
-        System.out.println();
-        testCSCourseClass();
-        System.out.println();
-        testArrays();
+        // testCourseClass();
+        // System.out.println();
+        // testCSCourseClass();
+        // System.out.println();
+        // testArrays();
+        // System.out.println();
+        // holders();
+        testExceptions();
+
     }
 
     public static void testCourseClass() {
@@ -38,12 +44,7 @@ public class Main {
     }
 
     public static void testArrays() {
-        String[] myStrings = new String[5];
-        myStrings[0] = "this";
-        myStrings[1] = "is";
-        myStrings[2] = "an";
-        myStrings[3] = "array";
-        myStrings[4] = "ofstrings";
+        String[] myStrings = {"this", "is", "an", "array", "ofstrings"};
 
         String[] moreStrings = new String[6];
         for(int i = 0; i < myStrings.length; i++) {
@@ -55,12 +56,38 @@ public class Main {
         printArray(myStrings);
         System.out.println();
         printArray(moreStrings);
+        System.out.println();
+
+        ArrayList<String> myStringList = new ArrayList<>();
+        for(int i = 0; i < myStrings.length; i++) {
+            myStringList.add(myStrings[i]);
+        }
+        System.out.println(myStringList);
+        myStringList.remove(2);
+        myStringList.remove("ofstrings");
+        myStringList.remove("not there");
+        myStringList.add(2, "great");
+        myStringList.add(2, "a");
+        myStringList.set(4, "ArrayList");
+        System.out.println(myStringList);
     }
 
     public static void printArray(String[] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-            
+        for(String e: arr) {
+            System.out.println(e);
+        }
+    }
+
+    public static void holders() {
+        Holder<String, Integer, Double> h = new Holder<>("a", 1, 2.5);
+        System.out.println(h);
+    }
+
+    public static void testExceptions() {
+        try {
+            CharlesBrown.kickTheFootball();
+        } catch(MissedException e) {
+            e.printStackTrace();
         }
     }
 }
