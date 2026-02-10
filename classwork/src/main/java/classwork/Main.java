@@ -5,14 +5,11 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // testCourseClass();
-        // System.out.println();
         // testCSCourseClass();
-        // System.out.println();
         // testArrays();
-        // System.out.println();
         // holders();
-        testExceptions();
-
+        // testExceptions();
+        testLinkedList();
     }
 
     public static void testCourseClass() {
@@ -89,5 +86,17 @@ public class Main {
         } catch(MissedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void testLinkedList() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.push(10);
+        list.push(20);
+        list.push(40);
+        list.add(2, 30);
+        list.add(2, 12345);
+        list.remove(2);
+        list.pop();
+        System.out.println(list);
     }
 }
