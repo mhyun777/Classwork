@@ -4,12 +4,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        // testCourseClass();
-        // testCSCourseClass();
-        // testArrays();
-        // holders();
-        // testExceptions();
         testLinkedList();
+        testLinkedList2();
     }
 
     public static void testCourseClass() {
@@ -90,13 +86,38 @@ public class Main {
 
     public static void testLinkedList() {
         LinkedList<Integer> list = new LinkedList<>();
-        list.push(10);
-        list.push(20);
-        list.push(40);
-        list.add(2, 30);
-        list.add(2, 12345);
-        list.remove(2);
-        list.pop();
+        list.addEnd(10);
+        list.addEnd(20);
+        list.addEnd(40);
+        list.add(30, 2);
+        list.add(12345, 0);
+        list.addFront(0);
         System.out.println(list);
+        // 0 12345 10 20 30 40
+
+        list.remove(1);
+        System.out.println(list);
+        list.remove(0);
+        System.out.println(list);
+        list.remove(3);
+        System.out.println(list);
+        // 0 10 20 40
+    }
+
+    public static void testLinkedList2() {
+        LinkedList<Integer> list = new LinkedList<>();
+        LinkedList<Integer> list2 = new LinkedList<>();
+
+        list.addEnd(5);
+        list.addEnd(7);
+        list2.addEnd(5);
+        System.out.print(list.toString()+" equals "+list2.toString()+": ");
+        System.out.println(list.equals(list2));
+        list2.addEnd(7);
+        System.out.print(list.toString()+" equals "+list2.toString()+": ");
+        System.out.println(list.equals(list2));
+
+        LinkedList<Integer> list3 = list.copy();
+        System.out.println(list3);
     }
 }

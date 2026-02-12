@@ -3,14 +3,12 @@ package classwork;
 public class Node<E> {
     private E element;
     private Node<E> next;
+    private Node<E> previous;
 
-    public Node(E element) {
-        this.element = element;
-        next = null;
-    }
-    public Node(E element, Node<E> next) {
+    public Node(E element, Node<E> previous, Node<E> next) {
         this.element = element;
         this.next = next;
+        this.previous = previous;
     }
 
     public E getElement() {
@@ -25,5 +23,12 @@ public class Node<E> {
     }
     public void setNext(Node<E> next) {
         this.next = next;
+    }
+
+    public Node<E> getPrevious() {
+        return previous;
+    }
+    public void setPrevious(Node<E> previous) {
+        this.previous = previous;
     }
 }
