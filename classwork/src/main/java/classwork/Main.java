@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        testLinkedList();
-        testLinkedList2();
+        testComparing();
     }
 
     public static void testCourseClass() {
@@ -119,5 +118,11 @@ public class Main {
 
         LinkedList<Integer> list3 = list.copy();
         System.out.println(list3);
+    }
+
+    public static void testComparing() {
+        CSCourse course1 = new CSCourse("first", Course.College.H, 123, new CSCourse.Language[0]);
+        CSCourse course2 = new CSCourse("secon", Course.College.H, 234, new CSCourse.Language[0]);
+        System.out.println(course1.compareTo(course2));
     }
 }

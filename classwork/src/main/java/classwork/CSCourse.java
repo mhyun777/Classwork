@@ -1,6 +1,6 @@
 package classwork;
 
-public class CSCourse extends Course {
+public class CSCourse extends Course implements Comparable<CSCourse> {
     public static Department department = Department.CMSC;
     public static enum Language {PYTHON, JAVA, C};
     
@@ -27,5 +27,10 @@ public class CSCourse extends Course {
             output += " " + lang.substring(0,1) + lang.substring(1).toLowerCase();
         }
         return output;
+    }
+
+    @Override
+    public int compareTo(CSCourse o) {
+        return getNumber() - o.getNumber();
     }
 }
