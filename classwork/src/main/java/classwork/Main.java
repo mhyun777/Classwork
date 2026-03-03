@@ -1,10 +1,35 @@
 package classwork;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        testComparing();
+        int[] arr = new int[10];
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void testArrayStack() {
+        ArrayStack<String> s = new ArrayStack<>(5);
+        s.push("bottom");
+        s.push("middle");
+        s.push("top");
+        s.push("higher than the top??");
+        s.push("even higher?!?!?");
+        try {
+            s.push("icarus");
+        } catch(IllegalStateException e) {
+            System.out.println(e);
+        }
+        System.out.println(s.toString());
+        System.out.println("popped: "+s.pop());
+        System.out.println("popped: "+s.pop());
+        System.out.println("topped: "+s.top());
+        System.out.println("popped: "+s.pop());
+        System.out.println("size now: "+s.size());
+        System.out.println(s.toString());
     }
 
     public static void testCourseClass() {
